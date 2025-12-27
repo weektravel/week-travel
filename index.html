@@ -7,7 +7,7 @@
 
   <!-- ========== SEO / Social / Schema ========== -->
   <meta property="og:title" content="WEEK travel • горящие туры и индивидуальные путешествия">
-  <meta property="og:description" content="Турция, Мальдивы, Катар, ОАЭ, Сейшелы, Вьетнам, Китай. Раннее бронирование −20 %. Промокод WEEK5.">
+  <meta property="og:description" content="Турция, Мальдивы, Катар, ОАЭ, Сейшелы, Вьетнам, Китай. Промокод WEEK5.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://weektravel.ru">
   <meta property="og:image" content="https://weektravel.ru/img/og-week.jpg"><!-- 1200×630 px -->
@@ -100,7 +100,7 @@
       margin: auto;
     }
 
-    /* ========== HERO (изображение + оверлей) ========== */
+    /* ========== HERO с рутуб-фоном ========== */
     .hero {
       position: relative;
       height: 80vh;
@@ -109,18 +109,34 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      overflow: hidden;
     }
-    .hero::before { /* затемнение */
-      content: '';
+    .rutube-bg {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, .4);
+      width: 100%;
+      height: 100%;
+    }
+    .rutube-bg iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: -2;
+    }
+    .rutube-bg__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .35); /* лёгкое затемнение */
+      z-index: -1;
     }
     .hero__content {
       position: relative;
       color: #fff;
-      z-index: 2;
+      z-index: 1;
     }
     .hero h2 {
       font-size: 3rem;
@@ -142,8 +158,8 @@
       transition: background .3s, transform .3s;
     }
     .hero__btn:hover {
-      background: #b8972c;
-      transform: translateY(-2px);
+        background: #b8972c;
+        transform: translateY(-2px);
     }
     @media (max-width: 600px) {
       .hero h2 { font-size: 2.2rem; }
@@ -245,8 +261,15 @@
     </nav>
   </header>
 
-  <!-- ========== ГЕРОЙ (КАРТИНКА + ОВЕРЛЕЙ) ========== -->
+  <!-- ========== ГЕРОЙ (РУТУБ-ВИДЕО НА ФОНЕ) ========== -->
   <section class="hero">
+    <div class="rutube-bg">
+      <iframe src="https://rutube.ru/play/embed/3a9b7c0f7c3d3e7c3e7c3e7c3e7c3e7c3?autoplay=1&muted=1&loop=1&poster=0"
+              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+              class="rutube-bg__video"></iframe>
+      <div class="rutube-bg__overlay"></div>
+    </div>
+
     <div class="hero__content">
       <h2>ДОБРО ПОЖАЛОВАТЬ В МИР ПУТЕШЕСТВИЙ</h2>
       <p>Турагентство WEEK</p>
@@ -296,24 +319,16 @@
       <div class="card"><img loading="lazy" decoding="async" src="https://amazingarchitecture.com/storage/10759/museum-of-the-future-uae.jpg" alt="ОАЭ"/><div class="card-body"><h4>ОАЭ</h4><p>Дубай и Абу-Даби - шопинг и небоскрёбы</p></div></div>
       <div class="card"><img loading="lazy" decoding="async" src="https://horosho-tam.ru/thumb/top/pics/a2/13/59a852cd0b3ec54050d913a2/antalya.jpg" alt="Турция"/><div class="card-body"><h4>Турция</h4><p>Симфония впечатлений</p></div></div>
       <!-- 2 новых карточки -->
-      <div class="card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1550159930-40066082a4fc?auto=format&fit=crop&w=1350&q=80" alt="Вьетнам"/><div class="card-body"><h4>Вьетнам</h4><p>Ханой, Хо Ши Мин и пляжи Нячанга</p></div></div>
-      <div class="card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1350&q=80" alt="Китай"/><div class="card-body"><h4>Китай</h4><p>Пекин, Шанхай и древняя история</p></div></div>
+      <div class="card"><img loading="lazy" decoding="async" src="https://s01.cdn.pegast.ru/get/ec/d5/3b/f2f462c8a290273737f22f5b1f0a006c8b77f69b436b00c928cff453e0/shutterstock_1343264873+%281%29.jpg" alt="Вьетнам"/><div class="card-body"><h4>Вьетнам</h4><p>Ханой, Хо Ши Мин и пляжи Нячанга</p></div></div>
+      <div class="card"><img loading="lazy" decoding="async" src="https://images.goway.com/production/styles/article_featured_image_3xl/s3/featured_images/View-of-downtown-Shanghai-skyline-at-twilight-in-China%20_iStock-1031781438.jpg.webp?VersionId=sULOBuWkD5n6qpzyJW5_yoCzTSF4.fL7&itok=BFYBWKWf" alt="Китай"/><div class="card-body"><h4>Китай</h4><p>Пекин, Шанхай и древняя история</p></div></div>
     </div>
   </section>
 
-  <!-- ========== АКЦИИ ========== -->
+  <!-- ========== АКЦИИ (БЕЗ «раннего бронирования») ========== -->
   <section id="promo">
     <h3 style="margin-bottom:1.5rem; letter-spacing:1px;">🎁 Акции</h3>
 
     <div class="card" style="max-width:600px;">
-      <div class="card-body">
-        <span class="badge">Действует до 31.12</span>
-        <h4>Раннее бронирование — скидка 20 %</h4>
-        <p>Успей забронировать тур на лето 2025 по специальной цене. Количество мест ограничено.</p>
-      </div>
-    </div>
-
-    <div class="card" style="max-width:600px; margin-top:1rem;">
       <div class="card-body">
         <span class="badge">Действует до 31.01.2026</span>
         <h4>По промокоду WEEK5 — скидка 5 % на первое бронирование в Катар</h4>
