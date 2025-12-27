@@ -100,7 +100,7 @@
       margin: auto;
     }
 
-    /* ========== HERO с рутуб-фоном ========== */
+    /* ========== HERO (видео-фон без VPN) ========== */
     .hero {
       position: relative;
       height: 80vh;
@@ -111,32 +111,21 @@
       text-align: center;
       overflow: hidden;
     }
-    .rutube-bg {
+    .hero__video,
+    .hero__overlay {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
-    }
-    .rutube-bg iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      height: 100%;
-      transform: translate(-50%, -50%);
       object-fit: cover;
-      z-index: -2;
     }
-    .rutube-bg__overlay {
-      position: absolute;
-      inset: 0;
+    .hero__overlay {
       background: rgba(0, 0, 0, .35); /* лёгкое затемнение */
-      z-index: -1;
     }
     .hero__content {
       position: relative;
       color: #fff;
-      z-index: 1;
+      z-index: 2;
     }
     .hero h2 {
       font-size: 3rem;
@@ -158,8 +147,8 @@
       transition: background .3s, transform .3s;
     }
     .hero__btn:hover {
-        background: #b8972c;
-        transform: translateY(-2px);
+      background: #b8972c;
+      transform: translateY(-2px);
     }
     @media (max-width: 600px) {
       .hero h2 { font-size: 2.2rem; }
@@ -261,14 +250,14 @@
     </nav>
   </header>
 
-  <!-- ========== ГЕРОЙ (РУТУБ-ВИДЕО НА ФОНЕ) ========== -->
+  <!-- ========== ГЕРОЙ (ВИДЕО-ФОН БЕЗ VPN) ========== -->
   <section class="hero">
-    <div class="rutube-bg">
-      <iframe src="https://rutube.ru/play/embed/3a9b7c0f7c3d3e7c3e7c3e7c3e7c3e7c3?autoplay=1&muted=1&loop=1&poster=0"
-              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-              class="rutube-bg__video"></iframe>
-      <div class="rutube-bg__overlay"></div>
-    </div>
+    <video class="hero__video" autoplay muted loop playsinline>
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-beach-and-rocks-on-the-coast-4226-large.mp4" type="video/mp4">
+      <!-- резерв, если видео не загрузится -->
+      <img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80" alt="beach">
+    </video>
+    <div class="hero__overlay"></div>
 
     <div class="hero__content">
       <h2>ДОБРО ПОЖАЛОВАТЬ В МИР ПУТЕШЕСТВИЙ</h2>
