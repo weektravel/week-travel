@@ -99,22 +99,28 @@
       max-width: 1000px;
       margin: auto;
     }
+
+    /* ========== HERO (изображение + оверлей) ========== */
     .hero {
-      text-align: center;
-      padding: 8rem 1rem 6rem;
-      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
       position: relative;
+      height: 80vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
     }
-    .hero::before {
+    .hero::before { /* затемнение */
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, .45);
+      background: rgba(0, 0, 0, .4);
     }
-    .hero h2,
-    .hero p {
+    .hero__content {
       position: relative;
       color: #fff;
+      z-index: 2;
     }
     .hero h2 {
       font-size: 3rem;
@@ -123,7 +129,28 @@
     }
     .hero p {
       font-size: 1.2rem;
+      margin-bottom: 2rem;
     }
+    .hero__btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: .9rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .3s, transform .3s;
+    }
+    .hero__btn:hover {
+      background: #b8972c;
+      transform: translateY(-2px);
+    }
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 2.2rem; }
+      .hero p  { font-size: 1rem; }
+    }
+
+    /* ========== остальные стили ========== */
     .grid {
       display: grid;
       gap: 1.5rem;
@@ -218,10 +245,13 @@
     </nav>
   </header>
 
-  <!-- ========== ГЕРОЙ (С ФОНОМ) ========== -->
+  <!-- ========== ГЕРОЙ (КАРТИНКА + ОВЕРЛЕЙ) ========== -->
   <section class="hero">
-    <h2>ДОБРО ПОЖАЛОВАТЬ В МИР ПУТЕШЕСТВИЙ</h2>
-    <p>Турагентство WEEK</p>
+    <div class="hero__content">
+      <h2>ДОБРО ПОЖАЛОВАТЬ В МИР ПУТЕШЕСТВИЙ</h2>
+      <p>Турагентство WEEK</p>
+      <a href="#tours" class="hero__btn">Смотреть туры</a>
+    </div>
   </section>
 
   <!-- ========== ТУРЫ ========== -->
@@ -245,7 +275,7 @@
         </div>
       </div>
       <div class="card">
-        <img loading="lazy" decoding="async" src="https://imgcld.yatra.com/ytimages/image/upload/t_yt_blog_c_fill_q_auto:good_f_auto_w_800_h_500/v1570788228/DO_NOT_USE_Editorial_Images/Qatar%20City1_1570788225.jpg" alt="Катар"/>
+        <img loading="lazy" decoding="async" src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/555000/555257-qatar.jpg" alt="Катар"/>
         <div class="card-body">
           <h4>Катар</h4>
           <p>Шумная Доха + Пляж, 7 дней</p>
@@ -260,20 +290,28 @@
     <h3 style="margin-bottom:1.5rem; letter-spacing:1px;">📍 Направления</h3>
     <div class="grid">
       <div class="card"><img loading="lazy" decoding="async" src="https://visitmaldives.s3.amazonaws.com/kobdmEY8/c/4yvh1rdl-shareable_image.jpg" alt="Мальдивы"/><div class="card-body"><h4>Мальдивы</h4><p>Виллы на воде и бирюзовый океан</p></div></div>
-      <div class="card"><img loading="lazy" decoding="async" src="https://www.barnes-mauritius.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NTg5MjUsInB1ciI6ImJsb2JfaWQifX0=--31a33e0d12086f21c3619c3f89fb3f93aab315ed/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJzYXZlciI6eyJxdWFsaXR5Ijo0MH19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--8948e63fc9be155f2430eefaa6f0df90bc59b25f/the-seychelles" alt="Сейшелы"/><div class="card-body"><h4>Сейшелы</h4><p>Эксклюзив и природа без толп</p></div></div>
+      <div class="card"><img loading="lazy" decoding="async" src="https://mediaim.expedia.com/destination/1/aede2fa75f528a9251e4809645f62f7a.jpg" alt="Сейшелы"/><div class="card-body"><h4>Сейшелы</h4><p>Эксклюзив и природа без толп</p></div></div>
       <div class="card"><img loading="lazy" decoding="async" src="https://dcxnozgahgy2a.cloudfront.net/AcuCustom/Sitename/DAM/377/doha-qatar-shutterstock_25995113091_Main.webp" alt="Катар"/><div class="card-body"><h4>Катар</h4><p>Футуристический оазис</p></div></div>
       <div class="card"><img loading="lazy" decoding="async" src="https://explore-live.s3.eu-west-1.amazonaws.com/medialibraries/explore/explore-media/destinations/asia/thailand/thailand-main.jpg?ext=.jpg&width=1920&format=webp&quality=80&v=201704211108%201920w" alt="Таиланд"/><div class="card-body"><h4>Таиланд</h4><p>Пхукет и Бангкок в одном коктейле</p></div></div>
       <div class="card"><img loading="lazy" decoding="async" src="https://amazingarchitecture.com/storage/10759/museum-of-the-future-uae.jpg" alt="ОАЭ"/><div class="card-body"><h4>ОАЭ</h4><p>Дубай и Абу-Даби - шопинг и небоскрёбы</p></div></div>
       <div class="card"><img loading="lazy" decoding="async" src="https://horosho-tam.ru/thumb/top/pics/a2/13/59a852cd0b3ec54050d913a2/antalya.jpg" alt="Турция"/><div class="card-body"><h4>Турция</h4><p>Симфония впечатлений</p></div></div>
       <!-- 2 новых карточки -->
-      <div class="card"><img loading="lazy" decoding="async" src="https://cdn.tourradar.com/s3/serp/original/5032_Gia44gKW.jpg" alt="Вьетнам"/><div class="card-body"><h4>Вьетнам</h4><p>Ханой, Хо Ши Мин и пляжи Нячанга</p></div></div>
-      <div class="card"><img loading="lazy" decoding="async" src="https://whc.unesco.org/uploads/thumbs/site_0438_0035-1200-630-20251217144955.jpg" alt="Китай"/><div class="card-body"><h4>Китай</h4><p>Пекин, Шанхай и древняя история</p></div></div>
+      <div class="card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1550159930-40066082a4fc?auto=format&fit=crop&w=1350&q=80" alt="Вьетнам"/><div class="card-body"><h4>Вьетнам</h4><p>Ханой, Хо Ши Мин и пляжи Нячанга</p></div></div>
+      <div class="card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1350&q=80" alt="Китай"/><div class="card-body"><h4>Китай</h4><p>Пекин, Шанхай и древняя история</p></div></div>
     </div>
   </section>
 
   <!-- ========== АКЦИИ ========== -->
   <section id="promo">
     <h3 style="margin-bottom:1.5rem; letter-spacing:1px;">🎁 Акции</h3>
+
+    <div class="card" style="max-width:600px;">
+      <div class="card-body">
+        <span class="badge">Действует до 31.12</span>
+        <h4>Раннее бронирование — скидка 20 %</h4>
+        <p>Успей забронировать тур на лето 2025 по специальной цене. Количество мест ограничено.</p>
+      </div>
+    </div>
 
     <div class="card" style="max-width:600px; margin-top:1rem;">
       <div class="card-body">
