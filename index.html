@@ -10,7 +10,7 @@
   <meta property="og:description" content="Турция, Мальдивы, Катар, ОАЭ, Сейшелы, Вьетнам, Китай. Промокод WEEK5.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://weektravel.ru">
-  <meta property="og:image" content="https://weektravel.ru/img/og-week.jpg"><!-- 1200×630 px -->
+  <meta property="og:image" content="https://avatars.mds.yandex.net/get-marketcms/1523779/img-11fa3d04-3c49-4019-a286-783e75531e9f.png/optimize">
 
   <script type="application/ld+json">
   {
@@ -70,163 +70,159 @@
     }
     .logo-txt .week {
       font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      color: var(--text);
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        color: var(--text);
     }
     .logo-txt .travel {
-      font-size: .95rem;
-      font-weight: 300;
-      text-transform: lowercase;
-      letter-spacing: .5px;
-      margin-left: 1px;
+        font-size: .95rem;
+        font-weight: 300;
+        text-transform: lowercase;
+        letter-spacing: .5px;
+        margin-left: 1px;
     }
     nav {
-      display: flex;
-      gap: 2rem;
+        display: flex;
+        gap: 2rem;
     }
     nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color .3s;
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color .3s;
     }
     nav a:hover {
-      color: var(--accent);
+        color: var(--accent);
     }
     section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: auto;
+        padding: 4rem 2rem;
+        max-width: 1000px;
+        margin: auto;
     }
 
-    /* ========== HERO (видео-фон без VPN) ========== */
+    /* ========== HERO (картинка-фон без VPN) ========== */
     .hero {
-      position: relative;
-      height: 80vh;
-      min-height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
+        position: relative;
+        height: 80vh;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        background: url("https://avatars.mds.yandex.net/get-marketcms/1523779/img-11fa3d04-3c49-4019-a286-783e75531e9f.png/optimize") center/cover no-repeat;
     }
-    .hero__video,
-    .hero__overlay {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .hero__overlay {
-      background: rgba(0, 0, 0, .35); /* лёгкое затемнение */
+    .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, .35); /* лёгкое затемнение */
     }
     .hero__content {
-      position: relative;
-      color: #fff;
-      z-index: 2;
+        position: relative;
+        color: #fff;
+        z-index: 2;
     }
     .hero h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
     }
     .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
     }
     .hero__btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      padding: .9rem 2rem;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background .3s, transform .3s;
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        padding: .9rem 2rem;
+        border-radius: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background .3s, transform .3s;
     }
     .hero__btn:hover {
-      background: #b8972c;
-      transform: translateY(-2px);
+        background: #b8972c;
+        transform: translateY(-2px);
     }
     @media (max-width: 600px) {
-      .hero h2 { font-size: 2.2rem; }
-      .hero p  { font-size: 1rem; }
+        .hero h2 { font-size: 2.2rem; }
+        .hero p  { font-size: 1rem; }
     }
 
     /* ========== остальные стили ========== */
     .grid {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     .card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform .3s;
-      border: 1px solid #e5e5e5;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform .3s;
+        border: 1px solid #e5e5e5;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
     }
     .card:hover {
-      transform: translateY(-6px);
-      border-color: var(--accent);
+        transform: translateY(-6px);
+        border-color: var(--accent);
     }
     .card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
     }
     .card-body {
-      padding: 1rem 1.2rem;
+        padding: 1rem 1.2rem;
     }
     .card-body h4 {
-      margin-bottom: .5rem;
-      color: var(--accent);
+        margin-bottom: .5rem;
+        color: var(--accent);
     }
     .badge {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      padding: .25rem .6rem;
-      border-radius: 4px;
-      font-size: .75rem;
-      margin-bottom: .5rem;
-      font-weight: 700;
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        padding: .25rem .6rem;
+        border-radius: 4px;
+        font-size: .75rem;
+        margin-bottom: .5rem;
+        font-weight: 700;
     }
     .contact a {
-      color: var(--accent);
-      text-decoration: none;
+        color: var(--accent);
+        text-decoration: none;
     }
     footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: .85rem;
-      color: var(--gray);
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: .85rem;
+        color: var(--gray);
     }
 
     /* ======== нижняя панель связи ======== */
     .bottom-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #fff;
-      border-top: 1px solid #ddd;
-      display: flex;
-      padding: 6px;
-      z-index: 20;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: 1px solid #ddd;
+        display: flex;
+        padding: 6px;
+        z-index: 20;
     }
     .mbtn {
-      flex: 1;
-      margin: 0 4px;
-      padding: 10px;
-      border-radius: 6px;
-      text-align: center;
-      font-weight: 600;
-      color: #fff;
-      text-decoration: none;
+        flex: 1;
+        margin: 0 4px;
+        padding: 10px;
+        border-radius: 6px;
+        text-align: center;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
     }
     .call { background: var(--accent); }
     .wa   { background: #25D366; }
@@ -250,15 +246,8 @@
     </nav>
   </header>
 
-  <!-- ========== ГЕРОЙ (ВИДЕО-ФОН БЕЗ VPN) ========== -->
+  <!-- ========== ГЕРОЙ (КАРТИНКА-ФОН) ========== -->
   <section class="hero">
-    <video class="hero__video" autoplay muted loop playsinline>
-      <source src="https://assets.mixkit.co/videos/preview/mixkit-beach-and-rocks-on-the-coast-4226-large.mp4" type="video/mp4">
-      <!-- резерв, если видео не загрузится -->
-      <img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80" alt="beach">
-    </video>
-    <div class="hero__overlay"></div>
-
     <div class="hero__content">
       <h2>ДОБРО ПОЖАЛОВАТЬ В МИР ПУТЕШЕСТВИЙ</h2>
       <p>Турагентство WEEK</p>
@@ -266,9 +255,13 @@
     </div>
   </section>
 
-  <!-- ========== ТУРЫ ========== -->
+  <!-- ========== АКТУАЛЬНЫЕ ПРЕДЛОЖЕНИЯ (бывшие «Туры») ========== -->
   <section id="tours">
-    <h3 style="margin-bottom:1.5rem; letter-spacing:1px;">🔥 Туры</h3>
+    <h3 style="margin-bottom:1.5rem; letter-spacing:1px;">🔥 Актуальные предложения</h3>
+    <!-- неброский намёк на Telegram -->
+    <p style="text-align:center; margin:-1rem 0 1.5rem 0; font-size:.8rem; color:var(--gray);">
+      Больше горящих туров ищите в нашем <a href="https://t.me/week_travel" target="_blank" style="color:var(--accent);">Telegram-канале</a> – публикуем каждый день!
+    </p>
     <div class="grid">
       <div class="card">
         <img loading="lazy" decoding="async" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/b7/62/70/saat-kulesi-ve-yivli.jpg?w=900&h=500&s=1" alt="Турция"/>
@@ -333,11 +326,11 @@
     <p>Email: <a href="mailto:week-travel@mail.ru">week-travel@mail.ru</a></p>
     <p>График: Пн–Пт 10:00–23:00, Сб–Вс 10:00–20:00</p>
     <p>Instagram: @week__travel</p>
-    <p>Telegram: @week_travel (для связи) / @week-travel (канал)</p>
+    <p>Telegram: @week_travel (для связи) / <a href="https://t.me/week_travel" target="_blank">@week-travel</a> (канал)</p>
   </section>
 
   <!-- ========== ФУТЕР ========== -->
-  <footer>© WEEK, 2025</footer>
+  <footer>ИП Осипова Виктория Васильевна © Турагентство WEEK, 2026</footer>
 
   <!-- ========== НИЖНЯЯ ПАНЕЛЬ (всегда видна) ========== -->
   <div class="bottom-bar">
