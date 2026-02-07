@@ -4,14 +4,14 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WEEK • Турагентство</title>
-
+ 
   <!-- ========== SEO / Social / Schema ========== -->
   <meta property="og:title" content="WEEK travel • горящие туры и индивидуальные путешествия">
   <meta property="og:description" content="Турция, Мальдивы, Катар, ОАЭ, Сейшелы, Вьетнам, Китай, Маврикий. Промокод WEEK5.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://weektravel.ru">
-  <meta property="og:image" content="https://avatars.mds.yandex.net/get-marketcms/1523779/img-11fa3d04-3c49-4019-a286-783e75531e9f.png/optimize">
-
+  <meta property="og:image" content="images/hero-bg.jpg">
+ 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -28,7 +28,7 @@
     "url": "https://weektravel.ru"
   }
   </script>
-
+ 
   <!-- ========== Стили ========== -->
   <style>
     :root {
@@ -36,6 +36,7 @@
       --bg: #ffffff;
       --text: #000000;
       --gray: #555;
+      --light-gray: #f8f8f8;
     }
     * {
       box-sizing: border-box;
@@ -90,6 +91,7 @@
         text-decoration: none;
         font-weight: 600;
         transition: color .3s;
+        white-space: nowrap;
     }
     nav a:hover {
         color: var(--accent);
@@ -99,7 +101,7 @@
         max-width: 1000px;
         margin: auto;
     }
-
+ 
     /* ========== HERO (картинка-фон без VPN) ========== */
     .hero {
         position: relative;
@@ -110,7 +112,7 @@
         justify-content: center;
         text-align: center;
         overflow: hidden;
-        background: url("https://avatars.mds.yandex.net/get-marketcms/1523779/img-11fa3d04-3c49-4019-a286-783e75531e9f.png/optimize") center/cover no-repeat;
+        background: url("images/hero-bg.jpg") center/cover no-repeat;
     }
     .hero::before {
         content: '';
@@ -150,7 +152,7 @@
         .hero h2 { font-size: 2.2rem; }
         .hero p  { font-size: 1rem; }
     }
-
+ 
     /* ========== остальные стили ========== */
     .grid {
         display: grid;
@@ -201,7 +203,7 @@
         font-size: .85rem;
         color: var(--gray);
     }
-
+ 
     /* ======== нижняя панель связи ======== */
     .bottom-bar {
         position: fixed;
@@ -227,99 +229,461 @@
     .call { background: var(--accent); }
     .wa   { background: #25D366; }
     .tg   { background: #0088cc; }
+
+    /* ========== ПОИСК ТУРА ========== */
+    .search-section {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        border-radius: 20px;
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    }
+    .search-form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.2rem;
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-group label {
+        color: var(--accent);
+        font-size: .85rem;
+        font-weight: 600;
+        margin-bottom: .5rem;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+    }
+    .form-group input,
+    .form-group select {
+        padding: .9rem 1rem;
+        border: 2px solid rgba(212, 175, 55, 0.3);
+        border-radius: 10px;
+        font-size: 1rem;
+        background: #fff;
+        transition: border-color .3s, box-shadow .3s;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    }
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .search-btn {
+        grid-column: 1 / -1;
+        background: linear-gradient(135deg, var(--accent), #b8972c);
+        color: #fff;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform .3s, box-shadow .3s;
+        margin-top: .5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .search-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    }
+    .search-btn:active {
+        transform: translateY(0);
+    }
+    .search-note {
+        text-align: center;
+        color: #888;
+        font-size: .85rem;
+        margin-top: 1.5rem;
+    }
+    .search-note a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+    @media (max-width: 600px) {
+        .search-section {
+            padding: 1.5rem;
+        }
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ========== О НАС ========== */
+    .about-section {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: #fff;
+        border-radius: 16px;
+        padding: 3rem 2.5rem;
+        margin: 2rem 0;
+    }
+    .about-section h3 {
+        color: var(--accent);
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    .about-intro {
+        text-align: center;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        color: #e0e0e0;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    .stat-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(212, 175, 55, 0.1);
+        border-radius: 12px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--accent);
+        display: block;
+        line-height: 1;
+    }
+    .stat-label {
+        font-size: .9rem;
+        color: #aaa;
+        margin-top: .5rem;
+        display: block;
+    }
+    .about-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+    .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.2rem;
+        background: rgba(255,255,255,0.05);
+        border-radius: 10px;
+        transition: background .3s;
+    }
+    .feature-item:hover {
+        background: rgba(255,255,255,0.1);
+    }
+    .feature-icon {
+        width: 44px;
+        height: 44px;
+        background: var(--accent);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        flex-shrink: 0;
+    }
+    .feature-text h5 {
+        color: var(--accent);
+        margin-bottom: .3rem;
+        font-size: 1rem;
+    }
+    .feature-text p {
+        color: #bbb;
+        font-size: .9rem;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        nav a {
+            font-size: .9rem;
+        }
+        .about-section {
+            padding: 2rem 1.5rem;
+        }
+        .about-section h3 {
+            font-size: 1.6rem;
+        }
+        .stat-number {
+            font-size: 2rem;
+        }
+    }
   </style>
 </head>
-
+ 
 <body>
-  <!-- ========== ХЕДЕР (БЕЗ КНОПОК) ========== -->
+  <!-- ========== ХЕДЕР ========== -->
   <header>
     <div class="logo-txt">
       <div class="week">WEEK</div>
       <div class="travel">travel</div>
     </div>
-
+ 
     <nav>
-      <a href="#tours">Туры</a>
+      <a href="#search">Поиск тура</a>
       <a href="#destinations">Направления</a>
+      <a href="#about">О нас</a>
       <a href="#promo">Акции</a>
       <a href="#contacts">Контакты</a>
     </nav>
   </header>
-
-  <!-- ========== ГЕРОЙ (КАРТИНКА-ФОН) ========== -->
+ 
+  <!-- ========== ГЕРОЙ ========== -->
   <section class="hero">
     <div class="hero__content">
       <h2>ДОБРО ПОЖАЛОВАТЬ В МИР ПУТЕШЕСТВИЙ</h2>
       <p>Турагентство WEEK</p>
-      <a href="#tours" class="hero__btn">Смотреть туры</a>
+      <a href="#search" class="hero__btn">Найти тур</a>
     </div>
   </section>
 
-  <!-- ========== АКТУАЛЬНЫЕ ПРЕДЛОЖЕНИЯ (бывшие «Туры») ========== -->
-  <section id="tours">
-    <h3 style="margin-bottom:1.5rem; letter-spacing:1px;">🔥 Актуальные предложения</h3>
-    <!-- неброский намёк на Telegram -->
-    <p style="text-align:center; margin:-1rem 0 1.5rem 0; font-size:.8rem; color:var(--gray);">
-      Больше горящих туров ищите в нашем <a href="https://t.me/weektours" target="_blank" style="color:var(--accent);">Telegram-канале</a> – публикуем каждый день!
-    </p>
-    <div class="grid">
-      <div class="card">
-        <img loading="lazy" decoding="async" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/b7/62/70/saat-kulesi-ve-yivli.jpg?w=900&h=500&s=1" alt="Турция"/>
-        <div class="card-body">
-          <h4>Турция</h4>
-          <p>7 ночей, all inclusive, перелёт включен</p>
-          <p style="margin-top:.5rem; font-weight:bold;">от 63 тыс. RUB</p>
+  <!-- ========== ПОИСК ТУРА ========== -->
+  <section id="search">
+    <h3 style="margin-bottom:1.5rem; letter-spacing:1px;">🔍 Поиск тура</h3>
+    <div class="search-section">
+      <form class="search-form" id="tourSearchForm">
+        <div class="form-group">
+          <label for="destination">Куда хотите поехать</label>
+          <select id="destination" name="destination" required>
+            <option value="">Выберите направление</option>
+            <option value="turkey">Турция</option>
+            <option value="maldives">Мальдивы</option>
+            <option value="qatar">Катар</option>
+            <option value="uae">ОАЭ</option>
+            <option value="seychelles">Сейшелы</option>
+            <option value="mauritius">Маврикий</option>
+            <option value="thailand">Таиланд</option>
+            <option value="vietnam">Вьетнам</option>
+            <option value="china">Китай</option>
+            <option value="other">Другое направление</option>
+          </select>
         </div>
-      </div>
-      <div class="card">
-        <img loading="lazy" decoding="async" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/257759904.jpg?k=feda7ddd05d0c850a7eeb21e318f623e2f01f8b88c839e72541186a8ee4a95a0&o=" alt="Мальдивы"/>
-        <div class="card-body">
-          <h4>Мальдивы</h4>
-          <p>Райские пляжи и VIP-отдых, 9 дней</p>
-          <p style="margin-top:.5rem; font-weight:bold;">от 177 тыс. RUB</p>
+
+        <div class="form-group">
+          <label for="departure">Откуда вылет</label>
+          <select id="departure" name="departure" required>
+            <option value="">Город вылета</option>
+            <option value="moscow">Москва</option>
+            <option value="spb">Санкт-Петербург</option>
+            <option value="kazan">Казань</option>
+            <option value="novosibirsk">Новосибирск</option>
+            <option value="ekaterinburg">Екатеринбург</option>
+            <option value="other">Другой город</option>
+          </select>
         </div>
-      </div>
-      <div class="card">
-        <img loading="lazy" decoding="async" src="https://cdn.tripzaza.com/ru/destinations/wp-content/uploads/2018/03/2-The_Corniche-e1521872293480.jpg" alt="Катар"/>
-        <div class="card-body">
-          <h4>Катар</h4>
-          <p>Шумная Доха + Пляж, 7 дней</p>
-          <p style="margin-top:.5rem; font-weight:bold;">от 55 тыс. RUB</p>
+
+        <div class="form-group">
+          <label for="date">Дата вылета</label>
+          <input type="date" id="date" name="date" required>
         </div>
-      </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nights">Ночей</label>
+            <select id="nights" name="nights" required>
+              <option value="7">7 ночей</option>
+              <option value="10">10 ночей</option>
+              <option value="14">14 ночей</option>
+              <option value="any">Любое</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="people">Туристы</label>
+            <select id="people" name="people" required>
+              <option value="1">1 взрослый</option>
+              <option value="2" selected>2 взрослых</option>
+              <option value="2+1">2 взр. + 1 реб.</option>
+              <option value="2+2">2 взр. + 2 реб.</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="budget">Бюджет (₽)</label>
+          <select id="budget" name="budget" required>
+            <option value="">Выберите бюджет</option>
+            <option value="до 100 000">до 100 000 ₽</option>
+            <option value="100 000 - 200 000">100 000 - 200 000 ₽</option>
+            <option value="200 000 - 300 000">200 000 - 300 000 ₽</option>
+            <option value="300 000 - 500 000">300 000 - 500 000 ₽</option>
+            <option value="более 500 000">более 500 000 ₽</option>
+            <option value="любой">Любой бюджет</option>
+          </select>
+        </div>
+
+        <button type="submit" class="search-btn">Найти тур</button>
+      </form>
+      
+      <p class="search-note">
+        Или смотрите <a href="https://t.me/weektours" target="_blank">горящие туры в Telegram</a> – обновляем ежедневно!
+      </p>
     </div>
   </section>
 
-  <!-- ========== НАПРАВЛЕНИЯ (+Вьетнам, Китай и НОВЫЙ Маврикий) ========== -->
+  <script>
+    // Установка минимальной даты (сегодня)
+    document.getElementById('date').min = new Date().toISOString().split('T')[0];
+
+    // Обработка формы
+    document.getElementById('tourSearchForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const destination = formData.get('destination');
+      const departure = formData.get('departure');
+      const date = formData.get('date');
+      const nights = formData.get('nights');
+      const people = formData.get('people');
+      const budget = formData.get('budget');
+      
+      // Формируем сообщение
+      const destinations = {
+        'turkey': 'Турция',
+        'maldives': 'Мальдивы',
+        'qatar': 'Катар',
+        'uae': 'ОАЭ',
+        'seychelles': 'Сейшелы',
+        'mauritius': 'Маврикий',
+        'thailand': 'Таиланд',
+        'vietnam': 'Вьетнам',
+        'china': 'Китай',
+        'other': 'Другое направление'
+      };
+      
+      const departures = {
+        'moscow': 'Москва',
+        'spb': 'Санкт-Петербург',
+        'kazan': 'Казань',
+        'novosibirsk': 'Новосибирск',
+        'ekaterinburg': 'Екатеринбург',
+        'other': 'Другой город'
+      };
+      
+      const message = `Здравствуйте! Хочу подобрать тур:
+
+🌍 Направление: ${destinations[destination] || destination}
+✈️ Вылет из: ${departures[departure] || departure}
+📅 Дата: ${date}
+🌙 Ночей: ${nights === 'any' ? 'Любое' : nights}
+👥 Туристы: ${people}
+💰 Бюджет: ${budget}
+
+Жду подборку вариантов!`;
+
+      // Открываем Telegram с готовым сообщением
+      const telegramUrl = `https://t.me/week_travel?text=${encodeURIComponent(message)}`;
+      window.open(telegramUrl, '_blank');
+    });
+  </script>
+ 
+  <!-- ========== НАПРАВЛЕНИЯ ========== -->
   <section id="destinations">
     <h3 style="margin-bottom:1.5rem; letter-spacing:1px;">📍 Направления</h3>
     <div class="grid">
       <!-- NEW Маврикий -->
       <div class="card">
-        <img loading="lazy" decoding="async" src="https://i.pinimg.com/736x/57/60/24/5760242ac074589973f2b5dbfc2589e1.jpg" alt="Маврикий"/>
+        <img loading="lazy" decoding="async" src="images/mauritius.jpg" alt="Маврикий"/>
         <div class="card-body">
           <span class="badge" style="background:#ff4d4d;">NEW</span>
           <h4>Маврикий</h4>
           <p>Коралловые рифы и бирюзовые лагуны</p>
         </div>
       </div>
-
-      <div class="card"><img loading="lazy" decoding="async" src="https://visitmaldives.s3.amazonaws.com/kobdmEY8/c/4yvh1rdl-shareable_image.jpg" alt="Мальдивы"/><div class="card-body"><h4>Мальдивы</h4><p>Виллы на воде и бирюзовый океан</p></div></div>
-      <div class="card"><img loading="lazy" decoding="async" src="https://savoy.sc/upload/iblock/1a8/1a8515534b225576c07be13a5bb7c63c.jpg"/><div class="card-body"><h4>Сейшелы</h4><p>Эксклюзив и природа без толп</p></div></div>
-      <div class="card"><img loading="lazy" decoding="async" src="https://dcxnozgahgy2a.cloudfront.net/AcuCustom/Sitename/DAM/377/doha-qatar-shutterstock_25995113091_Main.webp" alt="Катар"/><div class="card-body"><h4>Катар</h4><p>Футуристический оазис</p></div></div>
-      <div class="card"><img loading="lazy" decoding="async" src="https://explore-live.s3.eu-west-1.amazonaws.com/medialibraries/explore/explore-media/destinations/asia/thailand/thailand-main.jpg?ext=.jpg&width=1920&format=webp&quality=80&v=201704211108%201920w" alt="Таиланд"/><div class="card-body"><h4>Таиланд</h4><p>Пхукет и Бангкок в одном коктейле</p></div></div>
-      <div class="card"><img loading="lazy" decoding="async" src="https://amazingarchitecture.com/storage/10759/museum-of-the-future-uae.jpg" alt="ОАЭ"/><div class="card-body"><h4>ОАЭ</h4><p>Дубай и Абу-Даби - шопинг и небоскрёбы</p></div></div>
-      <div class="card"><img loading="lazy" decoding="async" src="https://horosho-tam.ru/thumb/top/pics/a2/13/59a852cd0b3ec54050d913a2/antalya.jpg" alt="Турция"/><div class="card-body"><h4>Турция</h4><p>Симфония впечатлений</p></div></div>
+ 
+      <div class="card"><img loading="lazy" decoding="async" src="images/maldives.jpg" alt="Мальдивы"/><div class="card-body"><h4>Мальдивы</h4><p>Виллы на воде и бирюзовый океан</p></div></div>
+      <div class="card"><img loading="lazy" decoding="async" src="images/seychelles.jpg" alt="Сейшелы"/><div class="card-body"><h4>Сейшелы</h4><p>Эксклюзив и природа без толп</p></div></div>
+      <div class="card"><img loading="lazy" decoding="async" src="images/qatar.webp" alt="Катар"/><div class="card-body"><h4>Катар</h4><p>Футуристический оазис</p></div></div>
+      <div class="card"><img loading="lazy" decoding="async" src="images/thailand.jpg" alt="Таиланд"/><div class="card-body"><h4>Таиланд</h4><p>Пхукет и Бангкок в одном коктейле</p></div></div>
+      <div class="card"><img loading="lazy" decoding="async" src="images/uae.jpg" alt="ОАЭ"/><div class="card-body"><h4>ОАЭ</h4><p>Дубай и Абу-Даби - шопинг и небоскрёбы</p></div></div>
+      <div class="card"><img loading="lazy" decoding="async" src="images/turkey.jpg" alt="Турция"/><div class="card-body"><h4>Турция</h4><p>Симфония впечатлений</p></div></div>
       <!-- 2 новых карточки -->
-      <div class="card"><img loading="lazy" decoding="async" src="https://s01.cdn.pegast.ru/get/ec/d5/3b/f2f462c8a290273737f22f5b1f0a006c8b77f69b436b00c928cff453e0/shutterstock_1343264873+%281%29.jpg" alt="Вьетнам"/><div class="card-body"><h4>Вьетнам</h4><p>Ханой, Хо Ши Мин и пляжи Нячанга</p></div></div>
-      <div class="card"><img loading="lazy" decoding="async" src="https://images.goway.com/production/styles/article_featured_image_3xl/s3/featured_images/View-of-downtown-Shanghai-skyline-at-twilight-in-China%20_iStock-1031781438.jpg.webp?VersionId=sULOBuWkD5n6qpzyJW5_yoCzTSF4.fL7&itok=BFYBWKWf" alt="Китай"/><div class="card-body"><h4>Китай</h4><p>Пекин, Шанхай и древняя история</p></div></div>
+      <div class="card"><img loading="lazy" decoding="async" src="images/vietnam.jpg" alt="Вьетнам"/><div class="card-body"><h4>Вьетнам</h4><p>Ханой, Хо Ши Мин и пляжи Нячанга</p></div></div>
+      <div class="card"><img loading="lazy" decoding="async" src="images/china.webp" alt="Китай"/><div class="card-body"><h4>Китай</h4><p>Пекин, Шанхай и древняя история</p></div></div>
     </div>
   </section>
 
-  <!-- ========== АКЦИИ (БЕЗ «раннего бронирования») ========== -->
+  <!-- ========== О НАС ========== -->
+  <section id="about">
+    <div class="about-section">
+      <h3>✨ О нас</h3>
+      <p class="about-intro">
+        WEEK travel — это команда профессионалов, которая превращает мечты о путешествиях в реальность. 
+        Мы подбираем идеальный отдых для каждого клиента, учитывая все пожелания и бюджет.
+      </p>
+      
+      <div class="about-stats">
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Довольных клиентов</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Лет на рынке</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Направлений</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Поддержка</span>
+        </div>
+      </div>
+      
+      <div class="about-features">
+        <div class="feature-item">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-text">
+            <h5>Индивидуальный подход</h5>
+            <p>Подбираем туры под ваши предпочтения и бюджет</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💰</div>
+          <div class="feature-text">
+            <h5>Лучшие цены</h5>
+            <p>Горящие туры и эксклюзивные предложения</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-text">
+            <h5>Надёжность</h5>
+            <p>Работаем только с проверенными партнёрами</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-text">
+            <h5>Быстрое бронирование</h5>
+            <p>Оформляем туры за считанные минуты</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ========== АКЦИИ ========== -->
   <section id="promo">
     <h3 style="margin-bottom:1.5rem; letter-spacing:1px;">🎁 Акции</h3>
-
+ 
     <div class="card" style="max-width:600px;">
       <div class="card-body">
         <span class="badge">Действует до 31.01.2026</span>
@@ -328,7 +692,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- ========== КОНТАКТЫ ========== -->
   <section id="contacts" class="contact">
     <h3 style="margin-bottom:1rem; letter-spacing:1px;">📞 Контакты</h3>
@@ -338,11 +702,11 @@
     <p>Instagram: @week__travel</p>
     <p>Telegram: @week_travel (для связи) / <a href="https://t.me/weektours" target="_blank">@week-travel</a> (канал)</p>
   </section>
-
+ 
   <!-- ========== ФУТЕР ========== -->
   <footer>ИП Осипова Виктория Васильевна © Турагентство WEEK, 2026</footer>
-
-  <!-- ========== НИЖНЯЯ ПАНЕЛЬ (всегда видна) ========== -->
+ 
+  <!-- ========== НИЖНЯЯ ПАНЕЛЬ ========== -->
   <div class="bottom-bar">
     <a href="tel:+79165610924" class="mbtn call">Позвонить</a>
     <a href="https://t.me/weektours" class="mbtn tg" target="_blank">Канал с турами</a>
